@@ -1,0 +1,28 @@
+<p>
+	<h1>TASK</h1>
+</p>
+ <p>
+  <strong>Title:</strong>
+  <%= @task.title %>
+</p>
+
+
+  <h2>Add subtask:</h2>
+  <%= form_with model: [@task, @task.subtasks.build], url: projects_path do |form| %>
+  	<p>
+	    <%= form.label :title %><br>
+	    <%= form.text_field :title %>
+  	</p>
+
+  	<p>
+	    <%= form.label :isCompleted %><br>
+	    <%= form.check_box :isCompleted, {}, true, false %>
+  	</p>
+
+  	<p>
+  		<%= form.submit "Submit"%>
+  	</p>
+  <%end%>
+  <p>
+  	<%= link_to 'Back', projects_path %>
+  </p>

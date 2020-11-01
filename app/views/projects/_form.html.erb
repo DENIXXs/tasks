@@ -1,0 +1,7 @@
+<%= form_with model: @task, url: projects_path do |form| %>
+	<p>
+		Task
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </p>
+<%end%>

@@ -1,0 +1,13 @@
+<h1>Новая задача</h1>
+
+<%= form_with model: @task, url: projects_path, local: true do |form| %>
+	<p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </p>
+
+ 	<p>
+  		<%= form.submit "Submit"%>
+  	</p>
+<%end%>
+<%= link_to 'Back', projects_path %>

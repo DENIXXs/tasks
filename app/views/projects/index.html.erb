@@ -1,0 +1,24 @@
+<p>
+	<%= link_to "New Task", new_project_path%>
+</p>
+
+<p>
+<% @tasks.each do |t| %>
+ <h3> <%= t.title %> </h3>
+ 	<p>
+	<%@sub1 = t.subtasks.where(task_id: t.id)%>
+		<% @sub1.each do |s| %>
+		<br>
+		<%= s.text %>
+			<% if s.isCompleted%>
+			" Done "
+			<%end%>
+		<%end%>
+		<br>
+		<%= link_to "Show", project_path(t) %>
+		<hr>
+	</p>
+
+
+<%end%>
+</p>
